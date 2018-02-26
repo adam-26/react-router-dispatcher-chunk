@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v1.0.2...v1.0.3) (2018-02-26)
+
+
+### Bug Fixes
+
+* **docs:** Install ([cf76637](https://github.com/adam-26/react-router-dispatcher-chunk/commit/cf76637))
+* **docs:** Install ([#3](https://github.com/adam-26/react-router-dispatcher-chunk/issues/3)) ([5ba9387](https://github.com/adam-26/react-router-dispatcher-chunk/commit/5ba9387))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v1.0.1...v1.0.2) (2018-02-26)
 
