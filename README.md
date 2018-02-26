@@ -75,16 +75,18 @@ const {
 
 ### Install
 
+[react-chunk](https://github.com/adam-26/react-chunk) is a peer dependency and must also be installed.
+
 #### NPM
 
 ```js
-npm install --save react-router-dispatcher-chunk
+npm install --save react-chunk react-router-dispatcher-chunk
 ```
 
 #### Yarn
 
 ```js
-yarn add react-router-dispatcher-chunk
+yarn add react-chunk react-router-dispatcher-chunk
 ```
 
 ### API
