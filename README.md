@@ -47,7 +47,7 @@ const routes = [
       {
         // the client will pre-load the about chunk BEFORE rendering the route
         path: '/about',
-        component: routeChunk(AboutRouteChunk)
+        component: routeChunk()(AboutRouteChunk)
       }
     ]
   }
