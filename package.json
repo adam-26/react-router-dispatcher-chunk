@@ -1,6 +1,6 @@
 {
   "name": "react-router-dispatcher-chunk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react-router-dispatcher action for react-chunk dynamic imports",
   "main": "lib/index.js",
   "scripts": {
