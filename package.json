@@ -50,17 +50,17 @@
     "jest-junit-reporter": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-chunk": "^7.0.2",
+    "react-chunk": "^7.0.3",
     "react-dom": "^16.2.0",
-    "react-router-dispatcher": "^2.0.3",
+    "react-router-dispatcher": "^2.7.0",
     "react-router": "^4.0.0",
     "react-test-renderer": "^16.2.0",
     "standard-version": "^4.2.0"
   },
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-router-dispatcher": "^2.0.3",
-    "react-chunk": "^7.0.2"
+    "react-router-dispatcher": "^2.7.0",
+    "react-chunk": "^7.0.3"
   },
   "dependencies": {},
   "jest": {

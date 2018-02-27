@@ -10,11 +10,18 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
     return {
         name: CHUNK,
 
-        // No server action is required:
+        // HOC does not require the 'mapParamsToProps' option
+        requireMapParamsToProps: false,
+
+        // === No server action is required ===
         // Because Chunks may be defined OUTSIDE of the router, dispatcher can not be used for the server render
 
-        // Prepare client routes for pre-loading dynamic imports
-        initClientAction: ({ chunkLoaders }) => ({
+        // === No client action ===
+        // react-chunk 'preloadReady()' must be invoked BEFORE dispatching client actions on initial render
+
+        // Allow lifecycle methods to pre-load dynamic imports
+        // - this supports loading chunks during client navigation, and client-only rendering
+        initComponentAction: ({ chunkLoaders }) => ({
             chunkLoaders: chunkLoaders || []
         }),
 
@@ -30,10 +37,20 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
         // If any chunk loaders are found, pre-load the chunk imports
         successHandler: (routeProps, { chunkLoaders }) => {
             if (chunkLoaders && chunkLoaders.length) {
-                return preloadChunks(chunkLoaders);
+                const requiredChunks = chunkLoaders.splice(0, chunkLoaders.length);
+                return preloadChunks(requiredChunks);
             }
 
             return Promise.resolve();
+        },
+
+        errorHandler: (err, routeProps, { chunkLoaders }) => {
+            if (chunkLoaders && chunkLoaders.length) {
+                // clean up - remove any pending loaders
+                chunkLoaders.splice(0, chunkLoaders.length);
+            }
+
+            throw err;
         }
     };
 }
