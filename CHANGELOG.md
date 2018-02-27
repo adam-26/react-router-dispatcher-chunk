@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v1.0.3...v1.0.4) (2018-02-27)
+
+
+### Bug Fixes
+
+* **code:** Lifecycle rendering ([18cc88f](https://github.com/adam-26/react-router-dispatcher-chunk/commit/18cc88f))
+* **code:** Lifecycle rendering ([#4](https://github.com/adam-26/react-router-dispatcher-chunk/issues/4)) ([ffdd4da](https://github.com/adam-26/react-router-dispatcher-chunk/commit/ffdd4da))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v1.0.2...v1.0.3) (2018-02-26)
 

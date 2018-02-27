@@ -1,6 +1,6 @@
 {
   "name": "react-router-dispatcher-chunk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -4953,9 +4953,9 @@
       }
     },
     "react-chunk": {
-      "version": "7.0.2",
-      "resolved": "https://registry.npmjs.org/react-chunk/-/react-chunk-7.0.2.tgz",
-      "integrity": "sha512-dTzQ0hFQ9ZcUOnRyuatouzftRLi800TqufXF0E5av3NLQpONDZa7+J1O0DfxdvxOfepGswsSf8vYXAyvyKiW4Q==",
+      "version": "7.0.3",
+      "resolved": "https://registry.npmjs.org/react-chunk/-/react-chunk-7.0.3.tgz",
+      "integrity": "sha512-suTgoWpZTD0FFkrdQp4a04PtIrDeDYZQYnIqG4swy4O3vBxB++ZFD4EfnvFP+8Zq2V3IP0hfof3PW8p8ASL9lw==",
       "dev": true,
       "requires": {
         "hoist-non-react-statics": "2.5.0",
@@ -5017,9 +5017,9 @@
       }
     },
     "react-router-dispatcher": {
-      "version": "2.0.3",
-      "resolved": "https://registry.npmjs.org/react-router-dispatcher/-/react-router-dispatcher-2.0.3.tgz",
-      "integrity": "sha512-3snHIhZUGWiVr4Lx9eazQTPL0rWqVp5AIj6iB5QWmzPYHgBzGvSWvL5ssVmCtygI3/qJLg8q2QeJfZNdIbjHww==",
+      "version": "2.7.0",
+      "resolved": "https://registry.npmjs.org/react-router-dispatcher/-/react-router-dispatcher-2.7.0.tgz",
+      "integrity": "sha512-HSFm6wGMIKu2ABSA/IcWLZmmkehyS51Wrzq6659fwDRFmLhS6fQ8iBOZWBqK2ZYWaiA2sSz5kUJ63J4arUEfKw==",
       "dev": true,
       "requires": {
         "history": "4.7.2",
