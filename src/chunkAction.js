@@ -10,9 +10,6 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
     return {
         name: CHUNK,
 
-        // HOC does not require the 'mapParamsToProps' option
-        requireMapParamsToProps: false,
-
         // === No server action is required ===
         // Because Chunks may be defined OUTSIDE of the router, dispatcher can not be used for the server render
 
@@ -25,17 +22,21 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
             chunkLoaders: chunkLoaders || []
         }),
 
+        filterParamsToProps: ({ chunkLoaders }) => {
+            return { chunkLoaders };
+        },
+
         // Determine if any route component(s) are using react-chunk dynamic imports
-        staticMethod: (routeProps, actionProps, routerCtx) => {
+        staticMethod: (props, routerCtx) => {
             const { route, routeComponentKey } = routerCtx;
             const routeComponent = route[routeComponentKey];
             if (typeof routeComponent[getChunkLoaderStaticMethodName] === 'function') {
-                actionProps.chunkLoaders.push(routeComponent[getChunkLoaderStaticMethodName]());
+                props.chunkLoaders.push(routeComponent[getChunkLoaderStaticMethodName]());
             }
         },
 
         // If any chunk loaders are found, pre-load the chunk imports
-        successHandler: (routeProps, { chunkLoaders }) => {
+        successHandler: ({ chunkLoaders }) => {
             if (chunkLoaders && chunkLoaders.length) {
                 const requiredChunks = chunkLoaders.splice(0, chunkLoaders.length);
                 return preloadChunks(requiredChunks);
@@ -44,7 +45,7 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
             return Promise.resolve();
         },
 
-        errorHandler: (err, routeProps, { chunkLoaders }) => {
+        errorHandler: (err, { chunkLoaders }) => {
             if (chunkLoaders && chunkLoaders.length) {
                 // clean up - remove any pending loaders
                 chunkLoaders.splice(0, chunkLoaders.length);
