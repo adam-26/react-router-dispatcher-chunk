@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v2.0.0...v2.0.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* **code:** HOC defaults bug ([bd7ac6b](https://github.com/adam-26/react-router-dispatcher-chunk/commit/bd7ac6b))
+* **code:** HOC defaults bug ([#6](https://github.com/adam-26/react-router-dispatcher-chunk/issues/6)) ([789efe1](https://github.com/adam-26/react-router-dispatcher-chunk/commit/789efe1))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/adam-26/react-router-dispatcher-chunk/compare/v1.0.4...v2.0.0) (2018-02-28)
 
