@@ -3,6 +3,7 @@ import { preloadChunks } from 'react-chunk';
 export const CHUNK = 'chunk';
 
 export default function chunkAction(options?: { getChunkLoaderStaticMethodName?: string } = {}) {
+    let unsubscribeHoist = null;
     const { getChunkLoaderStaticMethodName } = Object.assign({
         getChunkLoaderStaticMethodName: 'getChunkLoader'
     }, options);
@@ -51,7 +52,20 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
                 chunkLoaders.splice(0, chunkLoaders.length);
             }
 
+            if (typeof unsubscribeHoist === 'function') {
+                unsubscribeHoist();
+            }
+
             throw err;
+        },
+
+        hoc: function hoc(Component, ActionHOC) {
+            // If the component is a react-chunk component, hoist statics on init
+            if (typeof Component.hoistOnInit === 'function') {
+                unsubscribeHoist = Component.hoistOnInit(() => ActionHOC);
+            }
+
+            return Component;
         }
     };
 }
