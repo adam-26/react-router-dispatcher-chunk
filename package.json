@@ -50,7 +50,7 @@
     "jest-junit-reporter": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-chunk": "^7.2.0",
+    "react-chunk": "^7.3.0",
     "react-dom": "^16.2.0",
     "react-router-dispatcher": "^6.2.0",
     "react-router": "^4.0.0",
@@ -60,7 +60,7 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-router-dispatcher": "^6.2.0",
-    "react-chunk": "^7.2.0"
+    "react-chunk": "^7.3.0"
   },
   "dependencies": {},
   "jest": {

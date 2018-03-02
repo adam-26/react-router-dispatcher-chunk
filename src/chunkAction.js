@@ -54,6 +54,7 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
 
             if (typeof unsubscribeHoist === 'function') {
                 unsubscribeHoist();
+                unsubscribeHoist = null;
             }
 
             throw err;
@@ -63,14 +64,15 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
             // If the component is a react-chunk component, hoist statics on init
             if (ActionHOC &&
                 typeof ActionHOC.appendActionDispatcher === 'function' &&
-                typeof Component.hoistOnInit === 'function') {
+                typeof Component.onImportedWithHoist === 'function') {
 
-                unsubscribeHoist = Component.hoistOnInit(ImportedComponent => {
+                unsubscribeHoist = Component.onImportedWithHoist(ImportedComponent => {
                     ActionHOC.appendActionDispatcher(ImportedComponent, {
                         // Prevent these static methods from being copied
                         preloadChunk: true,
                         getChunkLoader: true,
-                        hoistOnInit: true
+                        onImported: true,
+                        onImportedWithHoist: true
                     });
                 });
             }
