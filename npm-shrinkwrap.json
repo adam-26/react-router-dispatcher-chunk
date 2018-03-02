@@ -1,6 +1,6 @@
 {
   "name": "react-router-dispatcher-chunk",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -4953,9 +4953,9 @@
       }
     },
     "react-chunk": {
-      "version": "7.2.0",
-      "resolved": "https://registry.npmjs.org/react-chunk/-/react-chunk-7.2.0.tgz",
-      "integrity": "sha512-dm3bwdlfRjENNlGvwXaCfhi7E2H8STSLgQ3ejjubYyGd6tkBF70k8XSQ/xpwyjB/ChmclBP5numJoPkuZwQNVQ==",
+      "version": "7.3.0",
+      "resolved": "https://registry.npmjs.org/react-chunk/-/react-chunk-7.3.0.tgz",
+      "integrity": "sha512-8P0YefYiYuNKIpGKik2fPniHfSgNocgj3Ba1XSE1HiLyzI3QzFWShGslXNUFz2X047njixjAHkIfkG5xxs2Q8w==",
       "dev": true,
       "requires": {
         "hoist-non-react-statics": "2.5.0",
