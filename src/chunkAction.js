@@ -61,8 +61,18 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
 
         hoc: function hoc(Component, ActionHOC) {
             // If the component is a react-chunk component, hoist statics on init
-            if (typeof Component.hoistOnInit === 'function') {
-                unsubscribeHoist = Component.hoistOnInit(() => ActionHOC);
+            if (ActionHOC &&
+                typeof ActionHOC.appendDispatcherAction === 'function' &&
+                typeof Component.hoistOnInit === 'function') {
+
+                unsubscribeHoist = Component.hoistOnInit(ImportedComponent => {
+                    ActionHOC.appendActionDispatcher(ImportedComponent, {
+                        // Prevent these static methods from being copied
+                        preloadChunk: true,
+                        getChunkLoader: true,
+                        hoistOnInit: true
+                    });
+                });
             }
 
             return Component;
