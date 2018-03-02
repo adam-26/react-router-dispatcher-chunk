@@ -62,7 +62,7 @@ export default function chunkAction(options?: { getChunkLoaderStaticMethodName?:
         hoc: function hoc(Component, ActionHOC) {
             // If the component is a react-chunk component, hoist statics on init
             if (ActionHOC &&
-                typeof ActionHOC.appendDispatcherAction === 'function' &&
+                typeof ActionHOC.appendActionDispatcher === 'function' &&
                 typeof Component.hoistOnInit === 'function') {
 
                 unsubscribeHoist = Component.hoistOnInit(ImportedComponent => {
